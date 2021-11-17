@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aficionados al Pasado</title>
+    <link rel="stylesheet" href="ProyectoWeb-Type.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("formulario").addEventListener('submit', validar); 
+        });
+        function validar(evento){
+            evento.preventDefault();
+
+            document.getElementById("errores").innerHTML = "";
+                var nombre = document.getElementById("name").value;
+                var apellido = document.getElementById("lastname").value;
+                var telefono = document.getElementById("tel").value;
+                var email = document.getElementById("mail").value;
+                var mensaje = document.getElementById("msg").value;
+                var validarCorreo = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+            var errores = [];
+
+            if(!nombre || nombre.length>20){
+                errores.push("El nombre no es valido");
+                document.getElementById("name").style.backgroundColor = "lightcoral";
+            }
+            else if (nombre.length == 0){
+                alert("Completar el campo nombre");
+                return;
+            }
+            else {
+                document.getElementById("name").style.backgroundColor = "whitesmoke";
+                document.getElementById("name").style.border = "2px solid navy";
+            }
+            if(!apellido || apellido.length>20){
+                errores.push("El apellido no es valido");
+                document.getElementById("lastname").style.backgroundColor = "lightcoral";
+            }
+            else if (apellido.length == 0){
+                alert("Completar el campo apellido");
+                return;
+            }
+            else {
+                document.getElementById("lastname").style.backgroundColor = "whitesmoke";
+                document.getElementById("lastname").style.border = "2px solid navy";
+            }
+            if(isNaN(telefono) || telefono > 10 || telefono < 6){
+                errores.push("Debe ingresar cogigo de área seguido del número de telefono sin el 15");
+                document.getElementById("tel").style.backgroundColor = "lightcoral";
+            }else if (telefono.length == 0){
+                alert("Completar el campo telefono");
+                return;
+            }
+            else {
+                document.getElementById("tel").style.border = "2px solid navy";
+            }
+            if(!validarCorreo.test(mail)){
+                errores.push("El correo ingresado no es válido");
+                document.getElementById("mail").style.backgroundColor = "lightcoral";
+            }else if (correo.length == 0){
+                alert("Completar el campo correo electronico");
+                return;
+            }
+            else {
+                document.getElementById("mail").style.border = "2px solid navy";
+            }
+            if(mensaje.length < 4 || mensaje.length > 180){
+                errores.push("El mensaje debe contener entre 4 y un máximo de 180 caracteres");
+                document.getElementById("msg").style.backgroundColor = "lightcoral";
+            }else if (msj.length == 0){
+                alert("Debe escribir un mensaje");
+                return;
+            }
+            else {
+                document.getElementById("msg").style.border = "2px solid navy";
+            } 
+            if(errores.length > 0){
+                var cartel = "<ul>";
+                    for (var i = 0; i < errores.length; i++){
+                        cartel += "<li>" + errores[i] + "</li>";
+                    }
+                cartel += "</ul>";
+                document.getElementById("errores").innerHTML = cartel;
+                return false;
+            }else{
+                alert("Dedes completar todos los campos");
+                return 0;
+            }
+            let li = document.createElement('li');
+            li.innerHTML = "Mensaje enviado por:<br>"+ nombre + "<br>E-mail: " + email + "<br> Edad: " + edad + " años<br>" + "Mensaje:<br>" + msj;
+            let lista = document.getElementById('visitas');
+            lista.appendChild(li);
+            
+            alert("Mensaje enviado exitosamente")
+            document.getElementById("formulario").style.visibility = 'hidden';
+        
+        return false;
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div><nav class="menu">
+            <a href="ProyectoWeb-Inicio.html">Inicio</a>
+            <a href="ProyectoWeb-GuiaDeNunismatica.html">Guía de Nunismática</a>
+            <a href="ProyectoWeb-Archivo.html">Archivo</a>
+            <a href="ProyectoWeb-Historia.html">Historia</a>
+            <a href="ProyectoWeb-Contacto.html">Contacto</a>
+        </nav></div>
+    </header>
+    <div>
+        <table class="iconos">
+            <tr>
+                <th><img src="IconoDireccion.png" width="75" alt="Direccion" /></th>
+
+               <th><img src="IconoTelefono.png" width="75" alt="Telefono" /></th>
+
+                <th><img src="IconoEmail.png" width="75" alt="Email" /></th>
+            </tr>
+            <tr>
+                <td><p>Merlo, San Luis</p></td>
+                <td><p>266 4317043</p></td>
+                <td><p>aficionadosalpasado@gmail.com</p></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2 class="contacto">Contáctenos</h2>
+    </div>
+
+    <div id="errores" class="formu_errores"></div>
+    <div>
+        <form onsubmit="return validar()" class="formulario" id="formulario">
+        <ul class="form_grupo" id="form_grupo">
+
+         <li class="form_level" id="form_nombre">
+            <label for="name">Nombre:</label>
+            <div class="form_imput">
+                <input type="text" id="name" name="user_name" placeholder="name"/>
+            </div>
+        </li>
+         <li class="form_level" id="form_apellido">
+            <label for="lastname">Apellido:</label>
+            <div class="form_imput">
+                <input type="text" id="lastname" name="user_lastname" placeholder="last name"/>
+            </div>
+        </li>
+         <li class="form_level" id="form_tel">
+            <label for="tel">Telefono:</label>
+            <div class="form_imput">
+                <input type="number" id="tel" name="user_tel" placeholder="telephone"/>
+            </div>
+         </li>
+         <li class="form_level" id="form_correo">
+            <label for="mail">Correo electrónico:</label>
+            <div class="form_imput">
+                <input type="email" id="mail" name="user_email" placeholder="e-mail"/>
+            </div>
+         </li>
+         <li class="form_level" id="form_msj">
+            <label for="msg">Mensaje:</label>
+            <div class="form_imput">
+                <textarea id="msg" name="user_message" placeholder="message"></textarea>
+            </div>
+         </li>
+        </ul>
+       <div class="form_warning" id="form_warning">
+            <p><i class="fas fa-exclamation-triangle"></i><b>ERROR: </b> Por favor completa el formulario correctamente.</p><br>
+       </div>
+       <div class="form_enviar"><br>
+            <button class="form_enviar-btn" type="submit" value="Enviar">Enviar</button>
+       </div>
+       <p class="form_exito" id="form_exito"><br>Formulario enviado exitosamente</p>
+      </form>
+    </div>
+    <div class="formulario">
+        <h2>Libro de Visitas</h2>
+        <ul id="visitas">
+
+        </ul>
+    </div>
+</body>
+<footer>
+    <div class="pie">
+        <a href="ProyectoWeb-Inicio.html">Inicio</a>
+        <a href="ProyectoWeb-GuiaDeNunismatica.html">Guía de Nunismática</a>
+        <a href="ProyectoWeb-Archivo.html">Archivo</a>
+        <a href="ProyectoWeb-Historia.html">Historia</a>
+        <a href="ProyectoWeb-Contacto.html">Contacto</a>
+    </div>
+    <div>
+        <p class="copyright">  ©2021 | Aficionados al Pasado | Todos los Derechos Reservados.</p>
+    </div>
+</footer>
+</html>

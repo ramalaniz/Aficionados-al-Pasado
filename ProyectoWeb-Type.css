@@ -1,0 +1,280 @@
+body{
+    background-color: whitesmoke;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header{
+    width: auto;
+    height: 450px;
+    background: url('Aficionados_Logo/Logo_Aficionados_al_Pasado.png') center;
+    background-repeat: no-repeat;
+    background-color: black;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+header .menu{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 25px;
+    overflow: hidden;
+}
+header nav a{
+    display:inline-block;
+    color:whitesmoke;
+    text-decoration: none;
+    padding: 8px 20px;
+    line-height:normal;
+    font-size: 20px;
+    font-weight: bold;
+}
+header nav a:hover{
+    background: whitesmoke;
+    border-radius: 50px;
+    color: black;
+}
+main{
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: justify;
+}
+.taro{
+   margin: auto;
+   padding: 10px;
+   float: left;
+}
+.zaudin{
+   margin-top: 30px;
+   padding: 20px;
+   float: right;
+}
+.iconos{
+  position: relative;
+  margin: 0 auto;
+  border-spacing: 200px 2px;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0;
+}
+.contacto{
+  text-align: center;
+}
+.carrusel{
+  margin: auto;
+  background-color: whitesmoke;
+  width: 100%;
+  padding: 0px;
+}
+.carrusel ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul.slider{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+ul.slider li {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  transition: opacity .5s;
+  background:#fff;
+}
+ul.slider li img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+ul.slider li:first-child {
+  opacity: 1; /*Mostramos el primer <li>*/
+}
+ul.slider li:target {
+  opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+.menu{
+  text-align: center;
+  margin: 20px;
+}
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+.menu li a{
+  display: inline-block;
+  color: whitesmoke;
+  text-decoration: none;
+  background-color: grey;
+  padding: 5px;
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  border-radius: 100%;
+}
+
+.formulario {
+  background: lavender;
+    position: relative;
+    margin: 0px auto;
+    width: 400px;
+    padding: 2em;
+    border: 1px solid rgb(52, 73, 94);
+    border-radius: 1em;
+  }
+  .form_level{
+    display: block;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  .form_imput{
+    width: 75%;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 20px;
+    padding: 0px 30px 0px 10px;
+    margin: 0px;
+  }
+  .form_imput, ::placeholder{
+    font-family: 12px sans-serif;
+  }
+  .form_input, textarea {
+    width: 100%;
+    border-radius: 3px;
+    resize: none;
+  }
+  .form_input:focus{
+    border: 3px solid navy;
+    outline: none;
+    box-shadow: 3px 0px 30px darkgray;
+  }
+  .form_imput i{
+    position: center;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+  }
+  .form_warning{
+    height: 45px;
+    line-height: 45px;
+    background: lightcoral;
+    padding: 0 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    display: none;
+  }
+  .form_warning p{
+    margin: 0;
+  }
+  .form_warning-activo{
+    display: block;
+  }
+  .form_enviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_enviar-btn{
+    align-items: center;
+    height: 50px;
+    line-height: 50px;
+    width: 30%;
+    background-color: navy;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 3em;
+    cursor: pointer;
+  }
+  .form_exito{
+    font-size: 16px;
+    font-weight: bold;
+    color:limegreen;
+    display: none;
+  }
+  .form_exito-activo{
+    display: block;
+  }
+  .form_enviar-btn:hover {
+    background-color: whitesmoke;
+    color: navy;
+    font-weight: bold;
+  }
+  .form_grupo-correcto .form_estado{
+    color: limegreen;
+    opacity: 1;
+  }
+  .form_grupo-incorrecto .form_level{
+    color: red;
+  }
+  .form_grupo-incorrecto .form_imput i{
+    color: red;
+    opacity: 1;
+  }
+  .form_grupo-incorrecto .form_imput{
+    border: 1px solid red;
+  }
+
+  footer{
+    margin-top: 50px;
+    width: auto;
+    height: 150px;
+    background: url('Aficionados_Logo/Logo_reloj_xs.png') left;
+    background-repeat: no-repeat;
+    background-color: black;
+  }
+  .pie{
+    text-align: right;
+    color: whitesmoke;
+    font-size: 25px;
+    overflow: hidden;
+  }
+  footer a{
+      display:inline-block;
+      color:whitesmoke;
+      text-decoration: none;
+      padding: 3px 20px;
+      line-height:normal;
+      font-size: 18px;
+      font-weight: bold;
+  }
+  footer a:hover{
+      background: whitesmoke;
+      border-radius: 50px;
+      color: black;
+  }
+  .copyright{
+    text-align: center;
+    margin-top: 90px;
+    position: relative;
+    color: black;
+  }
+  .archivo{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    overflow: hidden;
+  }
+  .archivo a{
+    display:inline-block;
+    color:black;
+    text-decoration: none;
+    padding: 3px 20px;
+    line-height:normal;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .archivo a:hover{
+      background: black;
+      border-radius: 50px;
+      color: whitesmoke;
+  }
