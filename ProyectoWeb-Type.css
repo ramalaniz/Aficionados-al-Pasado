@@ -5,7 +5,7 @@ body{
 header{
     width: auto;
     height: 450px;
-    background: url('Aficionados_Logo/Logo_Aficionados_al_Pasado.png') center;
+    background: url('Logo_Aficionados_al_Pasado.png') center;
     background-repeat: no-repeat;
     background-color: black;
     margin-bottom: 30px;
@@ -227,7 +227,7 @@ ul.slider li:target {
     margin-top: 50px;
     width: auto;
     height: 150px;
-    background: url('Aficionados_Logo/Logo_reloj_xs.png') left;
+    background: url('Logo_reloj_xs.png') left;
     background-repeat: no-repeat;
     background-color: black;
   }
